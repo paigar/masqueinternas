@@ -1,0 +1,91 @@
+{% set activePage = page.url | url %}
+{%- css %}{% include "public/css/footer.css" %}{% endcss %}
+
+<section class="limites contenedor total sepe">
+  <div class="estrecho">
+    <img src="/img/1366_2000_LB.jpg" alt="Agencia de colocación autorizada">
+  </div>
+</section>
+<footer class="pie">
+  <div class="wrapper">
+    <div class="doscol">
+      <div class="doscol">
+        <div class="logopie">
+          {% if client.logopie %}
+            <img src="/img/{{ client.logopie }}" alt="{{ client.siteName }}">
+          {% else %}
+            {{ client.siteName }}
+          {% endif %}
+        </div>
+        <div class="datoscontacto">
+          {% if client.address.lineOne %}
+            <div class="direccion">
+              {% include 'svg/map-marker-alt.svg' %}
+              <div>
+                <p>{{ client.address.lineOne }}</p>
+                {% if client.address.lineTwo %}
+                  <p>{{ client.address.lineTwo }}</p>
+                {% endif %}
+                <p>{{ client.address.zip }} - {{ client.address.city }} ({{ client.address.state }})</p>
+              </div>
+            </div>
+          {% endif %}
+          {% if client.tel.land or client.tel.mobile %}
+            {% if client.tel.land %}
+              <div class="telefono">
+                {% include 'svg/phone-rotary.svg' %}
+                <div>
+                  <p>
+                    <a href="tel:{{ client.tel.land }}">{{ client.tel.landFormatted }}</a>
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+            {% if client.tel.mobile %}
+              <div class="telefono">
+                {% include 'svg/phone.svg' %}
+                <div>
+                  <p>
+                    <a href="tel:{{ client.tel.mobile }}">{{ client.tel.mobileFormatted }}</a>
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+          {% if client.email %}
+            <div class="email">
+              {% include 'svg/envelope.svg' %}
+              <div>
+                <p>
+                  <a href="mailto:{{ client.email }}">{{ client.email }}</a>
+                </p>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="doscol">
+        <nav class="menupie">
+          {% include "partials/menu-top.njk" %}
+        </nav>
+        <nav class="menupie">
+          {% include "partials/menu-bottom.njk" %}
+        </nav>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>
+        <span class="nowrap">
+          &copy; {% currentYear %}
+          <a href="/" {% if activePage === '/' %} aria-current="page" {% endif %}>
+            {{ client.siteName }}
+          </a>
+        </span> · <span class="nowrap">Desarrollado por <a href="https://www.idenautas.com" target="_blank" rel="nofollow noopener noreferrer">Idenautas</a>
+        </span>
+      </p>
+      <nav id="social" class="rrss" aria-label="Social links">
+        {% include "partials/menu-social.njk" %}
+      </nav>
+    </div>
+  </div>
+</footer>

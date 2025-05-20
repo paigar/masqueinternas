@@ -1,0 +1,19 @@
+{%- css %}{% include "public/css/postslist.css" %}{% endcss %}
+
+<div class="postslist">
+  {% for item in postslist %}
+    <div class="postitem">
+      {% if item.data.imgmain %}
+        <div class="imagen cubrir">
+          <img src="/img/{{ item.data.imgmain }}" alt="{{ item.data.title }}">
+        </div>
+      {% endif %}
+      <div class="textos">
+        <h3 class="titulo fs0">{{ item.data.title }}
+        </h3>
+        <p class="description fs-1">{{ item.data.description }}</p>
+        <a href="{{ item.url }}" class="boton" >Leer más</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>

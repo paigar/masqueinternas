@@ -1,0 +1,28 @@
+<div class="contacto total">
+  <div class="imagen cubrir">
+    <img src="/img/yolanda2.jpg" alt="">
+  </div>
+  <div class="formulario">
+    <form enctype="multipart/form-data" method="POST" action="{# https://forms.idenautas.work/mitmachagentur.php #}">
+      <div class="campos">
+        <div class="campo input">
+          <input type="text" name="name" placeholder="Nombre" pattern=".{3,}" title="Introduce al menos 3 caracteres" required>
+        </div>
+        <div class="campo input">
+          <input type="email" name="email" placeholder="Correo electrónico" pattern="^[a-z0-9!#$%&‘*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:a-z0-9?.)+a-z0-9?" required>
+        </div>
+        <div class="campo textarea">
+          <textarea name="comments" cols="30" rows="10" placeholder="Comentarios" ></textarea>
+        </div>
+      </div>
+      <div class="legal">
+        <input type="checkbox" id="legal" name="legal" required>
+        <label for="legal">He leído y acepto la <a href="/politica-de-privacidad/" target="_blank">política de privacidad</a>
+        </label>
+      </div>
+      <div class="enviar">
+        <button class="boton" type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>

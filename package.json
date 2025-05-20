@@ -1,0 +1,29 @@
+{
+	"name": "masqueinternas",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+		"start": "npx @11ty/eleventy --serve --quiet",
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+	},
+	"keywords": [],
+	"author": {
+		"name": "Juanjo Marcos",
+		"email": "juanjo@paigar.es",
+		"url": "https://www.paigar.es/"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=14"
+	},
+	"type": "module",
+	"dependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"markdown-it-image-figures": "^2.1.1",
+		"swiper": "^11.2.6"
+	}
+}

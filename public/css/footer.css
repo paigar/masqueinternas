@@ -1,0 +1,130 @@
+.pie {
+	padding: var(--space-xl-2xl) 0 var(--space-m-l);
+	background-color: var(--color-primario);
+	color: var(--color-fondo);
+	font-size: var(--fs--1);
+}
+
+.pie a {
+	color: var(--color-fondo);
+	text-decoration: none;
+	transition: opacity 300ms;
+}
+
+.pie a:hover,
+.pie a:focus {
+	opacity: 0.75;
+}
+
+.logopie {
+	width: 25%;
+	max-width: min(100%, 18rem);
+}
+
+.logopie img {
+	display: block;
+	width: 100%;
+	max-width: 12rem;
+}
+
+.menupie ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	font-size: var(--fs--1);
+	white-space: nowrap;
+}
+.menupie ul ul {
+	display: none;
+}
+.menupie .nav-item-active {
+	font-weight: 600;
+}
+
+.doscol {
+	display: flex;
+	gap: 1rem clamp(3rem, 8vw, 6rem);
+	justify-content: center;
+}
+
+.wrapper > .doscol {
+	padding-block-end: var(--space-s-m);
+	margin-block-end: var(--space-s-m);
+	border-bottom: 1px solid var(--color-fondo);
+}
+
+.copyright {
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.85em;
+}
+
+.pie .rrss {
+	display: flex;
+	gap: 1rem;
+}
+.pie .rrss svg {
+	height: 2em;
+	fill: var(--color-fondo);
+}
+
+.datoscontacto > div {
+	display: grid;
+	grid-template-columns: 2em 1fr;
+}
+.datoscontacto svg {
+	fill: var(--color-fondo);
+	height: 1.1em;
+	margin-block: 0.2em;
+}
+
+.pie .menutop > li:last-child a,
+.pie .menutop > li:last-child a:hover {
+	padding: 0;
+	background-color: unset;
+}
+.pie .menutop > li:has(.nav-item-active) > a {
+	color: var(--color-fondo);
+	font-weight: bold;
+}
+.pie .menutop li svg {
+	display: none;
+}
+
+@media (max-width: 60rem) {
+	.doscol {
+		justify-content: center;
+	}
+	.doscol > .doscol {
+		flex-direction: column;
+	}
+	.pie .logopie {
+		width: 9em;
+	}
+}
+
+@media (max-width: 32rem) {
+	.doscol {
+		flex-direction: column;
+		text-align: center;
+	}
+	.pie .logopie {
+		margin-inline: auto;
+	}
+	.logopie img {
+		margin-inline: auto;
+	}
+	.copyright {
+		flex-direction: column;
+	}
+	.copyright p {
+		text-align: center;
+	}
+	.datoscontacto > div {
+		width: fit-content;
+		margin-inline: auto;
+	}
+}

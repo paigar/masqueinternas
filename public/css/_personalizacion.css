@@ -1,0 +1,59 @@
+:root {
+	--color-texto: #212223;
+	--color-texto-alt1: #535456;
+	--color-fondo: #fff;
+	--color-fondo-alt1: #f0f1f2;
+	--color-fondo-alt2: #d1dde9;
+	--color-primario: #0448a2;
+	--color-secundario: #ae8802;
+	--color-terciario: #a42709;
+	--color-fondo-cabecera: #f7f3f2;
+
+	--fs-base: clamp(1rem, 2vw, 1.4rem);
+	--altura-cabecera: 5rem;
+
+	--anchura-ancho: 72rem;
+	--anchura-normal: 72rem;
+	--anchura-estrecho: 45rem;
+
+	--headerHeightMobile: 5.5rem;
+	--header-height-int: 6rem;
+	--header-height-ext: 9rem;
+	--header-height-dif: calc(
+		var(--header-height-ext) - var(--header-height-int)
+	);
+
+	/* Tamaños fuentes */
+	--fs--1: clamp(0.875rem, 0.79rem + 0.42vw, 1.125rem);
+	--fs-0: clamp(1rem, 0.88rem + 0.63vw, 1.375rem);
+	--fs-1: clamp(1.1875rem, 1.04rem + 0.73vw, 1.625rem);
+	--fs-2: clamp(1.4375rem, 1.19rem + 1.25vw, 2.1875rem);
+	--fs-3: clamp(1.5625rem, 1.1rem + 2.29vw, 2.9375rem);
+	--fs-4: clamp(1.75rem, 1.25rem + 2.5vw, 3.25rem);
+	--fs-5: clamp(2.2rem, 1.58rem + 3.58vw, 5.25rem);
+	--fs-6: clamp(2.75rem, 1.33rem + 7.08vw, 7rem);
+	--fs-7: clamp(3rem, 0.88rem + 10.63vw, 9.375rem);
+
+	/* Espacio */
+	--space-xs: clamp(0.75rem, 0.69rem + 0.29vw, 0.9375rem);
+	--space-s: clamp(1rem, 0.92rem + 0.39vw, 1.25rem);
+	--space-m: clamp(1.5rem, 1.38rem + 0.58vw, 1.875rem);
+	--space-l: clamp(2rem, 1.84rem + 0.78vw, 2.5rem);
+	--space-xl: clamp(3rem, 2.77rem + 1.17vw, 3.75rem);
+	--space-2xl: clamp(4rem, 3.69rem + 1.55vw, 5rem);
+	--space-3xl: clamp(6rem, 5.53rem + 2.33vw, 7.5rem);
+	--space-xs-s: clamp(0.75rem, 0.59rem + 0.78vw, 1.25rem);
+	--space-s-m: clamp(1rem, 0.73rem + 1.36vw, 1.875rem);
+	--space-m-l: clamp(1.5rem, 1.19rem + 1.55vw, 2.5rem);
+	--space-l-xl: clamp(2rem, 1.46rem + 2.72vw, 3.75rem);
+	--space-l-2xl: clamp(2rem, 1.07rem + 4.66vw, 5rem);
+	--space-xl-2xl: clamp(3rem, 2.38rem + 3.11vw, 5rem);
+	--space-2xl-3xl: clamp(4rem, 2.91rem + 5.44vw, 7.5rem);
+}
+
+@media (max-width: 50rem) {
+	:root {
+		--header-height-int: var(--headerHeightMobile);
+		--header-height-ext: var(--headerHeightMobile);
+	}
+}

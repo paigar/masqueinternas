@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+---
+{%- css %}{% include "public/css/post.css" %}{% endcss %}
+
+{% if imgmain %}
+  <div class="wide cubrir imgmain">
+    <img src="/img/{{ imgmain }}" alt="{{ title }}">
+  </div>
+{% endif %}
+<div class="narrow maincontent">
+  <h1 class="titulo fs3">{{ title }}</h1>
+  <div class="fecha">{% include "svg/calendar-alt.svg" %}{{ date | readableDate }}</div>
+  {{ content | safe }}
+
+  <div class="etiquetas">
+    <p>Etiquetado como:</p>
+    <ul>
+      {% for item in tags %}
+        {% if (item !== "blog") %}
+          <li>
+            <a href="/blog/{{ item }}/">{{ item }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="ancho">
+    {%- if collections.blog %}
+      {%- set previousPost = collections.blog | getPreviousCollectionItem %}
+      {%- set nextPost = collections.blog | getNextCollectionItem %}
+      {%- if nextPost or previousPost %}
+        <ul class="links-nextprev">
+          {%- if previousPost %}
+            <li class="links-nextprev-prev">← Anterior<br>
+              <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+            </li>
+          {% endif %}
+          {%- if nextPost %}
+            <li class="links-nextprev-next">Siguiente →<br>
+              <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+            </li>
+          {% endif %}
+        </ul>
+      {%- endif %}
+    {%- endif %}
+  </div>
+
+  <div style="height: 5vh"></div>
+
+  {% include "partials/cta.njk" %}

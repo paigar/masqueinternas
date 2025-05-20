@@ -1,0 +1,9 @@
+---
+title: Artículos de interés
+subtitle: Un lugar dedicado a intercambiar conocimientos útiles y reflexiones personales sobre la práctica cotidiana del cuidado.
+permalink: /blog/
+layout: layouts/pagina_simple.njk
+---
+
+{% set postslist = collections.blog | reverse %}
+{% include "partials/postslist.njk" %}

@@ -1,0 +1,24 @@
+---js
+// <script>
+const layout = "layouts/pagina_simple.njk"
+const pagination = {
+	data: "collections",
+	size: 1,
+	alias: "tag",
+	filter: ["all", "blog"],
+	// addAllPagesToCollections: true,
+};
+
+const eleventyExcludeFromCollections = true;
+
+const eleventyComputed = {
+  title: "{{ tag }}",
+	subtitle: "Articulos etiquetados como '{{ tag }}'",
+	permalink: function(data) {
+		return `/blog/${this.slugify(data.tag)}/`;
+	}
+};
+---
+
+{% set postslist = collections[tag] %}
+{% include "partials/postslist.njk" %}

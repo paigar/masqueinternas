@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+
+title: Más que Internas
+introForm: Contáctanos
+---
+
+{%- css %}{% include "public/css/home.css" %}{% endcss %}
+
+<div class="presentacion total">
+  <div class="texto">
+    <img src="/img/logopie.png" alt="Más Que Internas">
+    <h1>Tu socio de confianza en el cuidado de personas</h1>
+    <p>En MÁS QUE INTERNAS entendemos que el cuidado de nuestros seres queridos trasciende las tareas domésticas tradicionales. Somos mucho más que una empresa de servicio doméstico: somos especialistas en crear vínculos humanos genuinos que mejoran la calidad de vida de las personas mayores y proporcionan tranquilidad absoluta a sus familias.</P>
+    <p>
+      <a class="leermas" href="/conocenos/">Conócenos</a>
+    </P>
+  </div>
+  <div class="imagen cubrir">
+    <img src="/img/mqi.jpg" alt0="Más que Internas">
+  </div>
+</div>
+
+<div class="total grisclaro limites">
+  <h2>Nuestros servicios</h2>
+  <p>¿Necesitas asistencia a domicilio y no te terminas de decidir? Te entendemos, los nuestros son lo más querido que tenemos.</p>
+  {% include "partials/servicios.njk" %}
+</div>
+
+{% include "partials/cta.njk" %}
+
+<h2>Artículos de interés</h2>
+<p>Un lugar dedicado a intercambiar conocimientos útiles y reflexiones personales sobre la práctica cotidiana del cuidado.</p>
+
+{% set postslist = collections.blog | reverse | head(6) %}
+{% include "partials/postslist.njk" %}

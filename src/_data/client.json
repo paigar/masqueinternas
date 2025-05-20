@@ -1,0 +1,48 @@
+{
+	"siteName": "Más Que Internas",
+	"domain": "www.masqueinternas.es",
+	"logo": "logo.jpg",
+	"logopie": "logopie.png",
+	"email": "info@masqueinternas.es",
+	"tel": {
+		"land": "+34946097838",
+		"landFormatted": "+34 94 609 78 38",
+		"mobile": "+34623412123",
+		"mobileFormatted": "+34 623 41 21 23"
+	},
+	"address": {
+		"lineOne": "Maria Diaz de Haro nº 56",
+		"lineTwo": "",
+		"city": "Bilbao",
+		"state": "SPAIN",
+		"zip": "48010",
+		"mapLink": "https://maps.app.goo.gl/34dMJD4siKGYT44X9"
+	},
+	"social": {
+		"rss": "",
+		"whatsapp": "https://api.whatsapp.com/send?phone=34623412123",
+		"facebook": "https://www.facebook.com/masqueinternas",
+		"twitter": "",
+		"instagram": "https://www.instagram.com/masqueinternas",
+		"linkedin": "",
+		"youtube": "",
+		"tiktok": "",
+		"pinterest": "",
+		"skype": "",
+		"mastodon": "",
+		"discord": "",
+		"github": "",
+		"slideshare": "",
+		"flickr": "",
+		"vimeo": "",
+		"telegram": ""
+	},
+	"legal": {
+		"nombreLegal": "CONGO CONSULTING S.L.",
+		"nif": "B19737915",
+		"direccionFiscal": "Maria Diaz de Haro nº 56. Bilbao - 48010 (BIZKAIA)",
+		"emailLegal": "info@masqueinternas.es",
+		"tfnoLegal": "+34 94 609 78 38",
+		"datosRegistrales": ""
+	}
+}

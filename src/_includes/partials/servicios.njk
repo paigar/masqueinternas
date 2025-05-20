@@ -1,0 +1,33 @@
+{%- css %}{% include "public/css/listadoservicios.css" %}{% endcss %}
+
+{% if coleccion %}
+  {% set listado = collections[coleccion] %}
+{% else %}
+  {% set listado = collections.servicio %}
+{% endif %}
+
+<div class="servicios limites total">
+  <ul class="cuadriculaservicios">
+    {% for item in listado %}
+      {% if (page.url !== item.url) %}
+        <li>
+          {% if item.data.icono is defined %}
+            {% set icono = "svg/" + item.data.icono %}
+            <div class="icono">
+              {% include icono %}
+            </div>
+          {% endif %}
+          <h3>
+            <a href="{{ item.url }}">{{ item.data.title }}</a>
+          </h3>
+          <p>{{ item.data.subtitle }}</p>
+        </li>
+        <li>
+          <div class="imagen cubrir">
+            <a href="{{ item.url }}"><img src="{{ item.data.imagen }}" alt="{{ item.data.title }}"></a>
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

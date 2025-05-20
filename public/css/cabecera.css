@@ -1,0 +1,39 @@
+.cabecera {
+	padding-block: 0.5rem;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	background-color: var(--color-fondo);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: var(--altura-cabecera);
+	z-index: 100;
+}
+.mainlogo {
+	color: var(--color-texto);
+	text-decoration: none;
+	font-size: var(--fs3);
+}
+.menutop {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 1em;
+	font-size: var(--fs0);
+}
+.menutop a {
+	text-decoration: none;
+	color: var(--color-texto);
+}
+.menutop a[aria-current="page"] {
+	color: var(--color-primario);
+}
+.menutop a[aria-current="page"] svg {
+	fill: var(--color-primario);
+}
+.menuicon {
+	display: none;
+}

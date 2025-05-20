@@ -1,0 +1,56 @@
+.mitmachen {
+	min-height: 50vh;
+	overflow: hidden;
+	position: relative;
+}
+.mitmachen .fondo {
+	position: absolute;
+	inset: 0;
+}
+.mitmachen .contenido {
+	position: relative;
+	isolation: isolate;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 50%;
+	height: 100%;
+	min-width: min(30rem, 100%);
+	padding: calc(2 * var(--space-xl)) var(--space-xl);
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: var(--color-fondo);
+}
+.mitmachen .contenido > * {
+	max-width: 38ch;
+}
+.mitmachen .contenido::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: var(--color-primario);
+	opacity: 0.6;
+	z-index: -1;
+}
+.mitmachen .boton {
+	margin: 0;
+	font-size: var(--fs0);
+	color: var(--color-texto);
+	background-color: var(--color-secundario);
+	border-color: var(--color-secundario);
+	padding: 0.5em 1.75em;
+}
+.mitmachen .boton:hover {
+	background-color: var(--color-primario);
+	border-color: var(--color-fondo);
+	color: var(--color-fondo);
+}
+.mitmachen a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}

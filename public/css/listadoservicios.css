@@ -1,0 +1,92 @@
+.servicios {
+	padding-block: var(--space-l);
+	background-color: var(--color-fondo-alt1);
+}
+.servicios > h2 {
+	border-bottom: 2px solid var(--color-secundario);
+	padding: 0.5em 2em 0.5em 0;
+	width: fit-content;
+	position: relative;
+	isolation: isolate;
+}
+
+.cuadriculaservicios {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 0;
+}
+.cuadriculaservicios li {
+	background-color: var(--color-fondo);
+	aspect-ratio: 1;
+	position: relative;
+}
+.cuadriculaservicios li > * {
+	margin: 1.5rem;
+}
+.cuadriculaservicios .icono {
+	color: var(--color-fondo);
+	background-color: var(--color-primario);
+	width: 30%;
+	aspect-ratio: 1;
+	border-radius: 100%;
+	display: grid;
+	place-items: center;
+	position: relative;
+	z-index: 10;
+	pointer-events: none;
+}
+.cuadriculaservicios svg {
+	height: 60%;
+	width: 60%;
+}
+.cuadriculaservicios svg * {
+	fill: currentColor;
+	transition: fill 300ms linear;
+}
+.cuadriculaservicios a {
+	text-decoration: none;
+}
+.cuadriculaservicios a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	opacity: 0.2;
+	background-color: transparent;
+	transition: background-color 300ms linear;
+}
+.cuadriculaservicios a:hover::after {
+	background-color: var(--color-secundario);
+}
+.cuadriculaservicios li > .imagen {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+.cuadriculaservicios p {
+	font-size: var(--fs--1);
+}
+@media (min-width: 50rem) {
+	.cuadriculaservicios li:last-child:nth-child(3n + 1) {
+		display: none;
+	}
+}
+@media (max-width: 65rem) {
+	.cuadriculaservicios li {
+		aspect-ratio: 3 / 4;
+	}
+}
+@media (max-width: 50rem) {
+	.cuadriculaservicios {
+		grid-template-columns: 1fr;
+	}
+	.cuadriculaservicios li {
+		aspect-ratio: unset;
+	}
+	.cuadriculaservicios .icono {
+		width: 6rem;
+	}
+	.cuadriculaservicios .imagen {
+		aspect-ratio: 16 / 9;
+	}
+}

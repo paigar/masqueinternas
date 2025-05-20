@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+---
+{%- css %}{% include "public/css/pagina.css" %}{% endcss %}
+
+<div class="cabeceraarticulo total">
+  <div class="wrapper">
+    <h1>{{ title }}</h1>
+    {% if (subtitle) %}
+      <p>{{ subtitle }}</p>
+    {% endif %}
+  </div>
+</div>
+<div class="contenidolegal ancho">
+  {{ content | safe }}
+</div>

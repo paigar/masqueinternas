@@ -1,0 +1,106 @@
+.contacto {
+	display: flex;
+	width: 100%;
+	min-height: 40rem;
+}
+.contacto .imagen {
+	height: 100%;
+	width: 50%;
+	position: relative;
+	flex: 1 1 50%;
+}
+.contacto .imagen img {
+	position: absolute;
+	inset: 0;
+}
+.formulario {
+	background-color: var(--color-fondo-cabecera);
+	padding: var(--space-l-xl);
+	margin: 0;
+	display: grid;
+	place-items: center;
+	flex: 1 1 50%;
+}
+.formulario form {
+	width: min(100%, 40rem);
+	min-width: min(70vw, 15rem);
+}
+
+.formulario .campos {
+	display: grid;
+	gap: 1rem;
+}
+.formulario .campos input {
+	width: 100%;
+	padding: 0.3em 0.7em;
+	font-size: var(--fs-0);
+}
+.formulario .campos textarea {
+	width: 100%;
+	height: 15rem;
+	padding: 0.3em 0.7em;
+	resize: none;
+	font-size: var(--fs-0);
+}
+.legal {
+	padding: 1em 0;
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	font-size: var(--fs--1);
+}
+.enviar .boton {
+	margin: 0 0 0 auto;
+	font-size: var(--fs-0);
+	padding: 0.4em 1.5em;
+	border-radius: 0.5rem;
+}
+.contacto + .gris {
+	padding-block: var(--space-l);
+}
+.gris h2 {
+	text-align: center;
+}
+.formascontacto {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+	gap: 2rem;
+	justify-content: center;
+	text-align: center;
+	padding-block: var(--space-l);
+}
+.formascontacto p:first-of-type {
+	font-weight: 600;
+}
+.formascontacto .icon {
+	width: 6rem;
+	aspect-ratio: 1;
+	border: 2px solid var(--color-primario);
+	background-color: var(--color-primario);
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	margin-bottom: 0.5em;
+	margin-inline: auto;
+	color: var(--color-fondo);
+}
+.formascontacto .icon svg {
+	width: 50%;
+	height: 50%;
+	fill: currentcolor;
+}
+.formascontacto a {
+	text-decoration: none;
+	transition: color 300ms linear;
+}
+.formascontacto a:hover {
+	color: var(--color-primario);
+}
+.mapa {
+	display: block;
+	height: 60vh;
+	max-height: 40rem;
+	overflow: hidden;
+}

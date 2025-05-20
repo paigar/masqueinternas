@@ -1,0 +1,53 @@
+.pig-wrapper {
+	--padding-50: min(2rem, 5%);
+	--padding-100: min(5rem, 15%);
+	position: relative;
+	margin-block: var(--padding-100) var(--padding-50);
+	grid-column: ancho !important;
+}
+.tmpl-galeria {
+	padding: var(--padding-100) var(--padding-50);
+}
+.tmpl-galeria .contenedor {
+	width: 100%;
+}
+.tmpl-galeria p {
+	max-width: 50rem;
+}
+#pig {
+	position: relative;
+}
+.pig-figure {
+	background-color: #333333;
+	overflow: hidden;
+	left: 0;
+	position: absolute;
+	top: 0;
+	margin: 0;
+}
+.pig-figure img {
+	left: 0;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: 0.5s ease opacity;
+}
+.pig-figure img.pig-thumbnail {
+	-webkit-filter: blur(30px);
+	filter: blur(30px);
+	left: auto;
+	position: relative;
+	width: auto;
+}
+.pig-figure img.pig-loaded {
+	opacity: 1;
+}
+.pig-figure:hover {
+	cursor: pointer;
+}
+.contenido p {
+	grid-column: ancho !important;
+	max-width: 65ch;
+}

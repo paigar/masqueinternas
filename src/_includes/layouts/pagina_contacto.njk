@@ -1,0 +1,54 @@
+---
+layout: layouts/base.njk
+---
+{%- css %}{% include "public/css/pagina.css" %}{% endcss %}
+{%- css %}{% include "public/css/contacto.css" %}{% endcss %}
+
+<div class="cabeceraarticulo total">
+  <div class="wrapper">
+    <h1>{{ title }}</h1>
+    {% if (subtitle) %}
+      <p>{{ subtitle }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% include "partials/formulario.njk"%}
+
+<div class="total limites gris">
+  <h2>Contacta con nosotros</h2>
+  <div class="formascontacto">
+    <div class="forma">
+      <div class="icon">
+        {% include "svg/map-marker-alt.svg" %}</div>
+      <p>Dirección:</p>
+      <p>{{ client.address.lineOne}}</p>
+      <p>{{ client.address.zip}} - {{ client.address.city}}</p>
+    </div>
+    <div class="forma">
+      <div class="icon">
+        {% include "svg/phone.svg" %}</div>
+      <p>Teléfono:</p>
+      <p>
+        <a href="tel:{{client.tel.land}}">{{client.tel.landFormatted}}</a>
+      </p>
+      <p>
+        <a href="tel:{{client.tel.mobile}}">{{client.tel.mobileFormatted}}</a>
+      </p>
+    </div>
+    <div class="forma">
+      <div class="icon">
+        {% include "svg/social/whatsapp.svg" %}</div>
+      <p>Contáctanos por Whatsapp:</p>
+      <p>
+        <a href="{{ client.social.whatsapp }}">{{client.tel.mobileFormatted}}</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{% include "partials/mapa.njk"%}
+
+<div class="textos">
+  {{ content | safe }}
+</div>

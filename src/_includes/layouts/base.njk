@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ metadata.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or subtitle or metadata.description }}">
+    <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+
+    {#- Atom and JSON feeds included by default #}
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+
+    {#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    {#-
+		CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
+		1. You can add to them using `{% css %}`
+		2. You can get from them using `{% getBundle "css" %}` or `{% getBundleFileUrl "css" %}`
+		3. You can do the same for JS: {% js %}{% endjs %} and <script>{% getBundle "js" %}</script>
+		4. Learn more: https://github.com/11ty/eleventy-plugin-bundle
+		#}
+
+    {#- Add the contents of a file to the bundle #}
+    {%- css %}{% include "public/css/reset.css" %}{% endcss %}
+    {%- css %}{% include "public/css/_personalizacion.css" %}{% endcss %}
+    {%- css %}{% include "public/fonts/fonts.css" %}{% endcss %}
+    {%- css %}{% include "public/css/utilidades.css" %}{% endcss %}
+    {%- css %}{% include "public/css/cabecera.css" %}{% endcss %}
+    {%- css %}{% include "public/css/estilos.css" %}{% endcss %}
+    {%- css %}{% include "public/css/cookieconsent.css" %}{% endcss %}
+    {#- Or add from node_modules #}
+    {# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
+
+    {# Etiquetas para redes sociales #}
+    <meta property="og:title" content="{{ title or metadata.title }}">
+    <meta property="og:description" content="{{ subtitle or metadata.description }}">
+    <meta property="og:image" content="{{ metadata.url }}/images/{{ cabecera }}">
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+    <meta name="twitter:title" content="{{ title or metadata.title }}">
+    <meta name="twitter:description" content="{{ description or subtitle or metadata.description }}">
+    <meta name="twitter:url" content="{{ metadata.url }}/images/{{ cabecera }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="thumbnail" content="{{ metadata.url }}/images/{{ cabecera }}">
+
+    {#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
+    <style>
+      {% getBundle "css" %}
+    </style>
+    {#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
+    {#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="fs0">
+
+    {% include "partials/header.njk" %}
+
+    <main id="main" class="limites cuerpo">
+      {{ content | safe }}
+    </main>
+
+    {% include "partials/footer.njk" %}
+
+    <!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->
+    {%- js %}{% include "public/js/externallinks.js" %}{% endjs %}
+    {%- js %}{% include "public/js/cookieconsent.js" %}{% endjs %}
+    {%- js %}{% include "public/js/cookieconsent-init.js" %}{% endjs %}
+    <script>
+      {% getBundle "js" %}
+    </script>
+  </body>
+</html>
