@@ -25,7 +25,7 @@ Para iniciar tu proceso de selección y formar parte de la familia **MAS QUE INT
 
 Una vez enviada tu solicitud, nuestro equipo revisará tu perfil y te contactaremos para darte información sobre los siguientes pasos del proceso de selección. Mantente atento a tu correo electrónico y teléfono.
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSe2Uc5n1A82H0zMdUpHMZcEG9bI5i5pn9OOXTEqKgroqNZiJw/viewform" 
+<a href="https://forms.gle/Z1A6rzejKoXxgu348" 
        target="_blank" 
        rel="noopener noreferrer"
        style="display: inline-block; background-color: #2c5aa0; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; transition: background-color 0.3s;">
